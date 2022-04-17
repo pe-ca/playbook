@@ -1,38 +1,32 @@
-// Ejemplo 7: Setters para modificar los atributos del objeto
-class MissionCommander {
-    constructor(name, mission){
+// Ejemplo 10: Overrinding methods
+
+class Explorer{
+    constructor(name, username, mission){
         this.name = name
+        this.username = username
         this.mission = mission
-        this.students = 0
-        this.lives = 0
     }
 
-    get getStudents(){
-        return this.students
-    }
-
-    get getLives(){
-        return this.lives
-    }
-
-    set setStudents(students){
-        this.students = students
-    }
-
-    set setLives(lives){
-        this.lives = lives
+    getNameAndUsername(){
+        return `Explorer ${this. name}, username: ${this.username}`
     }
 }
 
-console.log("Ejemplo 7: Setters para modificar los atributos del objeto")
-const missionCommanderNode = new MissionCommander("Carlo", "NodeJS")
+class Viajero extends Explorer {
+    constructor(name, username, mission, cycle){
+        super(name, username, mission) // SUPER nos ayudará a llamar el constructor padre
+        this.cycle = cycle // Agregamos este atributo de la clase Viajero, es exclusiva de esta clase y no de la clase padre
+    }
 
-console.log(missionCommanderNode.getStudents) // 0 por default
-console.log(missionCommanderNode.getLives)// 0 por default
+    getGeneralInfo(){
+        let nameAndUsername = this.getNameAndUsername() // llamamos el método de la clase padre
+        // nameAndUsername  es una variable de esta función, no necesitas usar this para referenciarla.
+        return `${nameAndUsername}, Ciclo ${this.cycle}`
+    }
+}
 
-// actualizamos los atributos por medio de los setters
-missionCommanderNode.setStudents = 100
-missionCommanderNode.setLives = 3
-
-console.log(missionCommanderNode.getStudents) // 0 por default
-console.log(missionCommanderNode.getLives)// 0 por default
+const viajero1 = new Viajero("Carlo", "LaunchX", "Node JS", "Abril 2022")
+console.log("Ejemplo 10: Overrinding methods")
+console.log(viajero1)
+console.log(viajero1.getNameAndUsername()) // Método de la clase padre
+console.log(viajero1.getGeneralInfo()) // Método de la clase hija
