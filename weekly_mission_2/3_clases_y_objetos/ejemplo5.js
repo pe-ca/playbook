@@ -4,7 +4,7 @@ class PullRequest {
         this.repo = repo
         this.title = title
         this.lines_changed = lines_changed
-        this.status = "OPEN"
+        this.status = "OPEN" //atributo default
         this.dateCreated = new Date() // esto guardará la fecha actual en que se instancia el objeto
     }
 
