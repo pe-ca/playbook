@@ -78,4 +78,10 @@ console.log("Obtén la validación si al menos uno de los explorers tiene la pro
 const boolResult = explorers.some(item => item.missions.frontend.exercisesFinished === true)
 console.log(`¿Al menos uno de los explorers tienen ejercicios finalizados de la mision FrontEnd?: ${boolResult}`)
 
-/*Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY.*/
+console.log("Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY.")
+console.log(
+    `¿Todos los explorers tienen finalizadoa la mision del OnBoarding?: 
+    ${
+        explorers.every(item => item.missions.onboarding.isFinished === true)
+    }`
+)
