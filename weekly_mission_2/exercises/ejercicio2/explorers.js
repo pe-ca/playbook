@@ -60,7 +60,9 @@ console.log("Imprime el stack de cada explorer, usa FOR EACH")
 explorers.forEach(item => console.log(item.stack))
 explorers.forEach(item => console.log(item.name + " " + item.stack))
 
-/*Crea una nueva lista con las listas de stacks de cada explorer, usa MAP*/
+console.log("Crea una nueva lista con las listas de stacks de cada explorer, usa MAP")
+console.log(explorers.map((item)=> item.stack))
+
 /*Obtén la lista de explorers que tengan en su stack "js", usa FILTER (para validar un elemento en un lista se usa el método includes)*/
 /*Busca el primer explorer que sea de la CDMX, usa FIND*/
 /*Obtén la suma de todos los exercises_completed, usa REDUCE*/
