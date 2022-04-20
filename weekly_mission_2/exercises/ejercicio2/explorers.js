@@ -67,7 +67,12 @@ console.log("Obtén la lista de explorers que tengan en su stack 'js', usa FILTE
 console.log(explorers.filter(item => item.stack.includes("js")))
 console.log(explorers.filter(item => item.stack.includes("js")).map(item => item.name))
 
-/*Busca el primer explorer que sea de la CDMX, usa FIND*/
+console.log("Busca el primer explorer que sea de la CDMX, usa FIND")
+console.log(explorers.find(item => item.city.toUpperCase() == "CDMX"))
+
 /*Obtén la suma de todos los exercises_completed, usa REDUCE*/
+console.log(explorers.map(item => item.name + ", " + item.exercises_completed))
+console.log(explorers.reduce((acc, item) => acc + item.exercises_completed, 0))
+
 /*Obtén la validación si al menos uno de los explorers tiene la propiedad exercisesFinished en frontend como true, usa SOME*/
 /*Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY.*/
